@@ -15,7 +15,8 @@
 		"body-parser": "^1.15.2",
 		"request": "^2.79.0",
 		"es6-map": "^0.1.4",
-		"prettyjson": "^1.2.1"
+		"prettyjson": "^1.2.1",
+		"underscore.string": "^3.3.4"
 	},
 	"engines": {
 		"node": "6.9.1"

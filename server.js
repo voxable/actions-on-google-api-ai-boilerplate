@@ -6,9 +6,11 @@ const express = require('express');
 const ApiAiAssistant = require('actions-on-google').ApiAiAssistant;
 const bodyParser = require('body-parser');
 const request = require('request');
+const app = express();
+
 const Map = require('es6-map');
 const prettyjson = require('prettyjson');
-const app = express();
+const toSentence = require('underscore.string/toSentence');
 
 app.use(bodyParser.json({type: 'application/json'}));
 
