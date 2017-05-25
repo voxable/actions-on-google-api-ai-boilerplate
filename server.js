@@ -7,9 +7,12 @@ const ApiAiAssistant = require('actions-on-google').ApiAiAssistant;
 const bodyParser = require('body-parser');
 const request = require('request');
 const app = express();
-
 const Map = require('es6-map');
+
+// Pretty JSON output for logs
 const prettyjson = require('prettyjson');
+// Join an array of strings into a sentence
+// https://github.com/epeli/underscore.string#tosentencearray-delimiter-lastdelimiter--string
 const toSentence = require('underscore.string/toSentence');
 
 app.use(bodyParser.json({type: 'application/json'}));
@@ -53,8 +56,8 @@ app.post('/', function(req, res, next) {
   const assistant = new ApiAiAssistant({request: req, response: res});
 
   // Declare constants for your action and parameter names
-  const ASK_WEATHER_ACTION = 'askWeather';  // the action name from the API.AI intent
-  const CITY_PARAMETER = 'geo-city';
+  const ASK_WEATHER_ACTION = 'askWeather';  // The action name from the API.AI intent
+  const CITY_PARAMETER = 'geo-city'; // An API.ai parameter name
 
   // Create functions to handle intents here
   function getWeather(assistant) {
@@ -84,29 +87,29 @@ app.post('/', function(req, res, next) {
     });
   }
   
-  // Add handler functions to the action router
+  // Add handler functions to the action router.
   let actionRouter = new Map();
   
-  // The ASK_WEATHER_INTENT (askWeather) should map to the getWeather method
+  // The ASK_WEATHER_INTENT (askWeather) should map to the getWeather method.
   actionRouter.set(ASK_WEATHER_ACTION, getWeather);
   
-  // Route requests to the proper handler functions via the action router
+  // Route requests to the proper handler functions via the action router.
   assistant.handleRequest(actionRouter);
 });
 
-// Handle errors
+// Handle errors.
 app.use(function (err, req, res, next) {
   console.error(err.stack)
   res.status(500).send('Something broke!')
 })
 
-// Pretty print objects for logging
+// Pretty print objects for logging.
 function logObject(message, object, options) {
   console.log(message);
   console.log(prettyjson.render(object, options));
 }
 
-// Listen for requests
+// Listen for requests.
 let server = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + server.address().port);
 });
