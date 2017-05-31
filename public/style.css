@@ -18,6 +18,11 @@ h1 {
   color: blue;
 }
 
+main img {
+  margin-top: 30px;
+  width: 800px;
+}
+
 footer {
   margin-top: 50px;
   padding-top: 25px;
