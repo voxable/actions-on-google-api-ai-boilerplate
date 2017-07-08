@@ -1,5 +1,9 @@
 # Actions on Google API.AI Boilerplate
 
+<a href="https://glitch.com/~actions-on-google-api-ai-boilerplate">
+  <img src="https://cdn.rawgit.com/j-f1/nails-example/f97c8590/glitch-badge.svg" alt="Remix on Glitch">
+</a>
+
 This project is a boilerplate to help get you started building your own [Actions on Google](https://developers.google.com/actions/) for the Google Assistant that work with API.ai. This code will act as the [webhook fulfillment](https://docs.api.ai/docs/webhook) endpoint. Updates to your code will instantly deploy and update live. Click the Show button to see your live endpoint URL.
 
 ![demo](https://cdn.glitch.com/216ad9f8-8b2b-4a63-b11a-675087c02c37%2Fdemo.gif?1495739346963)
